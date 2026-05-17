@@ -1,0 +1,17 @@
+import pandas as pd
+
+# 1. Load the CSV file into a pandas dataframe
+
+
+df = pd.read_csv('C://Users//Laptop//GEOG300S26DM//psd_coffee.csv') # You will need to change the directory where the CSV file is stored
+
+# 2. Reshape the dataframe:
+# index: Nations (Country)
+# columns: Years (Year)
+# values: Arabica Production
+arabica_pivot = df.pivot(index='Country', columns='Year', values='Arabica Production')
+
+# 3. Display the head of the transformed dataframe
+print(arabica_pivot.head())
+
+arabica_pivot.to_csv('arabica_production_dm.csv')
